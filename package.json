@@ -1,0 +1,24 @@
+{
+  "name": "releaf-telegram-bot",
+  "version": "1.0.0",
+  "description": "Bot to automate releaf related activities on telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/nodemon index.js"
+  },
+  "keywords": ["chatbot", "nodejs", "telegram", "ikeora"],
+  "author": {
+    "name": "Ayorinde Komlafe",
+    "url": "https://github.com/ayondot"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "telegram-node-bot": "^4.0.3",
+    "dotenv": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+
+  }
+}
