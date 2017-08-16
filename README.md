@@ -26,6 +26,12 @@ The required packages are in the `package.json` file.
 4. Create a copy of `env/.env.sample` as `env/.env` and change variables to appropriate values
 5. Run `npm start` to startup the server
 
+## Interacting with the Bot
+1. You need to have a telegram account
+2. Sign in to telegram messenger
+3. Search for `@theReleafBot`
+4. Interact with the bot :)
+
 ## Contributing
 
 1. Clone the repo from https://github.com/releafgroup/releaf-telegram-bot
