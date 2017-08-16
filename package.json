@@ -7,18 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/.bin/nodemon index.js"
   },
-  "keywords": ["chatbot", "nodejs", "telegram", "ikeora"],
+  "keywords": [
+    "chatbot",
+    "nodejs",
+    "telegram",
+    "ikeora"
+  ],
   "author": {
     "name": "Ayorinde Komlafe",
     "url": "https://github.com/ayondot"
   },
   "license": "ISC",
   "dependencies": {
-    "telegram-node-bot": "^4.0.3",
-    "dotenv": "^2.0.0"
+    "axios": "^0.16.2",
+    "dotenv": "^2.0.0",
+    "telegram-node-bot": "^4.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-
   }
 }

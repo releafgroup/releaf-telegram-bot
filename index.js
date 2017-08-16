@@ -12,7 +12,7 @@ const startCtrl = new StartController()
     , formCtrl = new FormController();
 
 tg.router.when(new Telegram.TextCommand('/start', 'startCommand'), startCtrl)
-    .when(new Telegram.TextCommand('/form', 'formCommand'), formCtrl)
+    .when(new Telegram.TextCommand('/register', 'formCommand'), formCtrl)
     .otherwise(new OtherwiseController());
 
 function exitHandler(exitCode) {

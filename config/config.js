@@ -6,5 +6,6 @@ const dotenv = require('dotenv');
 dotenv.load({path: __dirname + '/../env/.env'});
 
 module.exports = Object.freeze({
-    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+    BASE_URL: process.env.NODE_ENV === 'development' ? process.env.STAGING_URL : process.env.BASE_URL
 });
