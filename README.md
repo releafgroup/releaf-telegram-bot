@@ -28,7 +28,7 @@ The required packages are in the `package.json` file.
 
 ## Contributing
 
-1. Clone the from https://github.com/releafgroup/releaf-telegram-bot
+1. Clone the repo from https://github.com/releafgroup/releaf-telegram-bot
 
 2. Create your feature branch
 
