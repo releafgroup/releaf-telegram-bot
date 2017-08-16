@@ -50,7 +50,7 @@ The required packages are in the `package.json` file.
 
         $ git push origin new_feature
     
-6. Then, create a new Pull Request
+6. Then create a new Pull Request
 
 [1]: https://nodejs.org/en/  "Node.js Official Site"
 [2]: https://www.npmjs.com/ "NPM Official Site"
