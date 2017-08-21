@@ -5,26 +5,10 @@ const Telegram = require('telegram-node-bot'),
 
 	let password = '';
 
-class FormController extends Telegram.TelegramBaseController {
-    formHandler($) {
+class RegisterController extends Telegram.TelegramBaseController {
+    registerHandler($) {
     	const name = $._message._from._firstName;
-    	const message = `Hello ${name}, Welcome to Releaf! We give you acccess to trustworthy customers you need to grow your business\n\nWould you like to join our trust network?`; 
-		const form = {
-		    register: {
-			    q: message,
-			    error: 'Sorry, wrong input',
-			    validator: (message, callback) => {
-				    if (message.text) {
-				    	const answer = message.text.split('')[0].toLowerCase();
-				    	if (answer === 'y') callback(true, message.text);
-					    else if (answer === 'n') $.sendMessage('Alright, good luck in your endeavours. You\'re free to check back at anytime');
-				    	else callback(false);
-				    }
-					
-					return;
-
-			    }
-		    },
+		const register = {
 		    company_name: {
 			    q: 'What is the name of your company?',
 			    error: 'Sorry, wrong input',
@@ -122,10 +106,9 @@ class FormController extends Telegram.TelegramBaseController {
 				    callback(false);
 			    }	
 		    }
-		}
+		};
 
-		$.runForm(form, (result) => {
-			delete result.register;
+		$.runForm(register, (result) => {
 			delete result.password_confirm;
 			console.log(result);
 			axios.post('/businesses', result).then(response => {
@@ -133,16 +116,16 @@ class FormController extends Telegram.TelegramBaseController {
 				
 			}).catch(err => {
 				console.log(err);
-				$.sendMessage(`Oops! An error error occured.\n\nType \\form to try again`);
+				$.sendMessage(`Oops! An error error occured.\n\nType \\register to try again`);
 			})
 		});	
     }
 
     get routes() {
         return {
-            'formCommand': 'formHandler'
+            'registerCommand': 'registerHandler'
         };
     }
 }
 
-module.exports = FormController;
+module.exports = RegisterController;

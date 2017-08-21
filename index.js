@@ -4,15 +4,32 @@ const Telegram = require('telegram-node-bot'),
     config = require('./config/config'),
     tg = new Telegram.Telegram(config.TELEGRAM_BOT_TOKEN);
 
-const FormController = require('./controllers/form')
+const RegisterController = require('./controllers/register')
     , StartController = require('./controllers/start')
+    , VerifyController = require('./controllers/verify')
+    , LandingController = require('./controllers/landing')
+
+    
+    // , TestController = require('./controllers/test')
+    
     , OtherwiseController = require('./controllers/otherwise');
 
 const startCtrl = new StartController()
-    , formCtrl = new FormController();
+    , registerCtrl = new RegisterController()
+    , landingCtrl = new LandingController()
+    , verifyCtrl = new VerifyController();
+
+
+    // , testCtrl = new TestController()
+
+
 
 tg.router.when(new Telegram.TextCommand('/start', 'startCommand'), startCtrl)
-    .when(new Telegram.TextCommand('/register', 'formCommand'), formCtrl)
+    .when(new Telegram.TextCommand('/register', 'registerCommand'), registerCtrl)
+    .when(new Telegram.TextCommand('/verify', 'verifyCommand'), verifyCtrl)
+
+    // .when(new Telegram.TextCommand('/test', 'testCommand'), testCtrl)
+
     .otherwise(new OtherwiseController());
 
 function exitHandler(exitCode) {
