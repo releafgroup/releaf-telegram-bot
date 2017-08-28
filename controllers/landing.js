@@ -12,47 +12,21 @@ class LandingController extends Telegram.TelegramBaseController {
             params: ['Please select one of the following options:'], //here you must pass the parameters for that method
             menu: [
                 {
-                    text: 'Register your business with Releaf', //text of the button
-                    callback: (callbackQuery, message) => { //to your callback will be passed callbackQuery and response from method
-                        new RegisterController().registerHandler($);
-                    }
-                },
-                {
                     text: 'Verify your business',
-                    message: 'Are you sure?',
-                    layout: 2,
-                    menu: [ //Sub menu (current message will be edited)
-                        {
-                            text: 'Yes!',
-                            callback: () => {
-
-                            }
-                        },
-                        {
-                            text: 'No!',
-                            callback: () => {
-
-                            }
-                        }
-                    ]
+                    callback: (callbackQuery, message) => { 
+                        new VerifyController().verifyHandler($);
+                    }
                 },
                 {
                     text: 'Make sales request',
                     message: 'Are you sure?',
-                    layout: 2,
                     menu: [ //Sub menu (current message will be edited)
                         {
-                            text: 'Yes!',
-                            callback: () => {
-
+                            text: 'Sales request feature coming soon',
+                            callback: (callbackQuery, message) => { 
+                                // new VerifyController().verifyHandler($);
                             }
                         },
-                        {
-                            text: 'No!',
-                            callback: () => {
-
-                            }
-                        }
                     ]
                 },
                 {
