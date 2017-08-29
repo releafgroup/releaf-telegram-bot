@@ -29,7 +29,7 @@ class VerifyController extends Telegram.TelegramBaseController {
 		const verify = {
 			email: {
 			    q: 'What\'s your email address please?',
-			    error: 'Account does not exist. Please try again with a valid email address',
+			    error: 'Account does not exist.',
 			    validator: (message, callback) => {
 				    if(message.text) {
 						axios.put('/businesses/0?email=' + message.text, code).then(response => {
